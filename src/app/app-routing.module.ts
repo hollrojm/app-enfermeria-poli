@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'Inicio',
     pathMatch: 'full'
   },
   {
@@ -13,65 +13,65 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'Login',
     pathMatch: 'full'
   },
   {
-    path: 'login',
+    path: 'Login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: '',
-    redirectTo: 'clases',
+    redirectTo: 'Clases',
     pathMatch: 'full'
   },
   {
-    path: 'clases',
+    path: 'Clases',
     loadChildren: () => import('./clases/clases.module').then( m => m.ClasesPageModule)
   },
   {
     path: '',
-    redirectTo: 'contactenos',
+    redirectTo: 'Contactenos',
     pathMatch: 'full'
   },
   {
-    path: 'contactenos',
+    path: 'Contactenos',
     loadChildren: () => import('./contactenos/contactenos.module').then( m => m.ContactenosPageModule)
   },
   {
     path: '',
-    redirectTo: 'crear-cuenta',
+    redirectTo: 'Crear Cuenta',
     pathMatch: 'full'
   },
   {
-    path: 'crear-cuenta',
+    path: 'Crear Cuenta',
     loadChildren: () => import('./crear-cuenta/crear-cuenta.module').then( m => m.CrearCuentaPageModule)
   },
   {
     path: '',
-    redirectTo: 'perfil-usuario',
+    redirectTo: 'Perfil de Usuario',
     pathMatch: 'full'
   },
   {
-    path: 'perfil-usuario',
+    path: 'Perfil de Usuario',
     loadChildren: () => import('./perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule)
   },
   {
     path: '',
-    redirectTo: 'quienes-somos',
+    redirectTo: 'Quienes Somos',
     pathMatch: 'full'
   },
   {
-    path: 'quienes-somos',
+    path: 'Quienes Somos',
     loadChildren: () => import('./quienes-somos/quienes-somos.module').then( m => m.QuienesSomosPageModule)
   },
   {
     path: '',
-    redirectTo: 'simulador-clases',
+    redirectTo: 'Simulador',
     pathMatch: 'full'
   },
   {
-    path: 'simulador-clases',
+    path: 'Simulador',
     loadChildren: () => import('./simulador-clases/simulador-clases.module').then( m => m.SimuladorClasesPageModule)
   },
   {

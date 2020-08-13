@@ -18,32 +18,47 @@ export class AppComponent implements OnInit {
       icon: 'mail'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
+      title: 'Clases',
+      url: '/folder/clases',
       icon: 'paper-plane'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
+      title: 'Videos',
+      url: '/folder/Videos',
       icon: 'heart'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
+      title: 'Simulador',
+      url: '/folder/simulador-clases',
       icon: 'archive'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
+      title: 'Perfil',
+      url: '/folder/perfil-usuario',
       icon: 'trash'
     },
     {
-      title: 'Spam',
-      url: '/folder/Spam',
+      title: 'Crear Cuenta',
+      url: '/folder/crear-cuenta',
+      icon: 'warning'
+    },
+    {
+      title: 'Quienes Somos',
+      url: '/folder/quienes-somos',
+      icon: 'warning'
+    },
+    {
+      title: 'Contactenos',
+      url: '/folder/contactenos',
+      icon: 'warning'
+    },
+    {
+      title: 'Cerrar Sesion',
+      url: '/folder/contactenos',
       icon: 'warning'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  
 
   constructor(
     private platform: Platform,
