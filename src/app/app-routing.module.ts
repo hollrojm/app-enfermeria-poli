@@ -13,56 +13,56 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'Login',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'Login',
+    path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: '',
-    redirectTo: 'Clases',
+    redirectTo: 'clases',
     pathMatch: 'full'
   },
   {
-    path: 'Clases',
+    path: 'clases',
     loadChildren: () => import('./clases/clases.module').then( m => m.ClasesPageModule)
   },
   {
     path: '',
-    redirectTo: 'Contactenos',
+    redirectTo: 'contactenos',
     pathMatch: 'full'
   },
   {
-    path: 'Contactenos',
+    path: 'contactenos',
     loadChildren: () => import('./contactenos/contactenos.module').then( m => m.ContactenosPageModule)
   },
   {
     path: '',
-    redirectTo: 'Crear Cuenta',
+    redirectTo: 'crear-cuenta',
     pathMatch: 'full'
   },
   {
-    path: 'Crear Cuenta',
+    path: 'crear-cuenta',
     loadChildren: () => import('./crear-cuenta/crear-cuenta.module').then( m => m.CrearCuentaPageModule)
   },
   {
     path: '',
-    redirectTo: 'Perfil de Usuario',
+    redirectTo: 'perfil-usuario',
     pathMatch: 'full'
   },
   {
-    path: 'Perfil de Usuario',
+    path: 'perfil-usuario',
     loadChildren: () => import('./perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule)
   },
   {
     path: '',
-    redirectTo: 'Quienes Somos',
+    redirectTo: 'quienes-somos',
     pathMatch: 'full'
   },
   {
-    path: 'Quienes Somos',
+    path: 'quienes-somos',
     loadChildren: () => import('./quienes-somos/quienes-somos.module').then( m => m.QuienesSomosPageModule)
   },
   {
