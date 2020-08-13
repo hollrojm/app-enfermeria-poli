@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
       icon: 'mail'
     },
     {
+<<<<<<< HEAD
       title: 'Clases',
       url: '/folder/clases',
       icon: 'paper-plane'
@@ -59,6 +60,34 @@ export class AppComponent implements OnInit {
     }
   ];
   
+=======
+      title: 'Login',
+      url: '/login',
+      icon: 'paper-plane'
+    },
+    {
+      title: 'Perfil',
+      url: '/perfil-usuario',
+      icon: 'person'
+    },
+    {
+      title: 'Institucion',
+      url: '/quienes-somos',
+      icon: 'school'
+    },
+    {
+      title: 'Ejercios',
+      url: '/simulador-clases',
+      icon: 'heart'
+    },
+    {
+      title: 'Videos',
+      url: '/videos',
+      icon: 'warning'
+    }
+  ];
+  public labels = ['Calendario', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+>>>>>>> f7a09e2dca95351c9cf1152d7ee300cea364215b
 
   constructor(
     private platform: Platform,

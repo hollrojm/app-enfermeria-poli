@@ -3,10 +3,15 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
+<<<<<<< HEAD
           <ion-list-header>Enfermería
             <img  >
           </ion-list-header>
           <ion-note></ion-note>
+=======
+          <ion-list-header>Menu</ion-list-header>
+          <ion-note>PoliEnfermeria@pi.edu.co</ion-note>
+>>>>>>> f7a09e2dca95351c9cf1152d7ee300cea364215b
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
