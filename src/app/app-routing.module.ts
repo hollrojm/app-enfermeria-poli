@@ -4,12 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'Inicio',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule)
   },
   {
     path: '',
@@ -82,10 +82,26 @@ const routes: Routes = [
   {
     path: 'videos',
     loadChildren: () => import('./videos/videos.module').then( m => m.VideosPageModule)
-  },  {
+  },
+  {
+    path: '',
+    redirectTo: 'ejercicios',
+    pathMatch: 'full'
+  },
+  {
     path: 'ejercicios',
     loadChildren: () => import('./ejercicios/ejercicios.module').then( m => m.EjerciciosPageModule)
-  }
+  },
+  
+{
+    path: '',
+    redirectTo: 'folder',
+    pathMatch: 'full'
+  },
+  {
+    path: 'folder',
+    loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)
+  },
 
 ];
 
