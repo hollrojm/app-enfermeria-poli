@@ -37,11 +37,7 @@ export class AppComponent implements OnInit {
       url: '/perfil-usuario',
       icon: 'person'
     },
-    {
-      title: 'Crear Cuenta',
-      url: '/crear-cuenta',
-      icon: 'person-add'
-    },
+    
     {
       title: 'Institución',
       url: '/quienes-somos',
