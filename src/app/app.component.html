@@ -1,20 +1,33 @@
 <ion-app>
   <ion-split-pane contentId="main-content" >
-    <ion-menu contentId="main-content" type="overlay" color="dark">
-      <ion-content color="dark">
-        <ion-list id="inbox-list" color="dark">
-          <ion-list-header color="dark">Enfermería
-            
-          </ion-list-header>
+    <ion-menu contentId="main-content" type="overlay" >
+      <ion-content >
+        <ion-list id="inbox-list" >
+          <div class="menu-header-bg"></div>
+            <div class="contenido-header">
+              <img src="../assets/images/avatar-enfermeria.JPG" alt="Avatar Enfermeria">
+              <ion-label>
+                <h2>Florence Nightingale</h2>
+                <p>Enfermería</p>
+              </ion-label>
+            </div>
+            <div class="action-button">
+              <ion-button>Salir
+                 <ion-icon name="exit-outline"></ion-icon>
+              </ion-button>
+            </div>
+          <!-- <ion-list-header  color="primary">Enfermería</ion-list-header> -->
+          
           <ion-note></ion-note>
-
-          <ion-menu-toggle   auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item color="dark" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"
+            <div class="menu-toggle">
+          <ion-menu-toggle    auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item  (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"
               lines="none" detail="false" [class.selected]="selectedIndex == i">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+          </div>
         </ion-list>
 
        

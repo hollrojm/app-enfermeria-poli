@@ -15,48 +15,44 @@ export class AppComponent implements OnInit {
     {
       title: 'Inicio',
       url: '/folder/Inbox',
-      icon: 'mail'
+      icon: 'home'
     },
     {
       title: 'Clases',
       url: '/clases',
-      icon: 'paper-plane'
+      icon: 'time'
     },
     {
       title: 'Videos',
       url: '/videos',
-      icon: 'heart'
+      icon: 'videocam'
     },
     {
       title: 'Simulador',
       url: '/simulador-clases',
-      icon: 'archive'
+      icon: 'play'
     },
     {
       title: 'Perfil',
       url: '/perfil-usuario',
-      icon: 'trash'
+      icon: 'person'
     },
     {
       title: 'Crear Cuenta',
       url: '/crear-cuenta',
-      icon: 'warning'
+      icon: 'person-add'
     },
     {
-      title: 'Quienes Somos',
+      title: 'Institución',
       url: '/quienes-somos',
-      icon: 'warning'
+      icon: 'business'
     },
     {
       title: 'Contactenos',
       url: '/contactenos',
-      icon: 'warning'
-    },
-    {
-      title: 'Cerrar Sesion',
-      url: '/contactenos',
-      icon: 'warning'
+      icon: 'send'
     }
+  
   ];
   
 
