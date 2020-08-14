@@ -82,7 +82,11 @@ const routes: Routes = [
   {
     path: 'videos',
     loadChildren: () => import('./videos/videos.module').then( m => m.VideosPageModule)
+  },  {
+    path: 'ejercicios',
+    loadChildren: () => import('./ejercicios/ejercicios.module').then( m => m.EjerciciosPageModule)
   }
+
 ];
 
 @NgModule({
