@@ -67,11 +67,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'Simulador',
+    redirectTo: 'simulador-clases',
     pathMatch: 'full'
   },
   {
-    path: 'Simulador',
+    path: 'simulador-clases',
     loadChildren: () => import('./simulador-clases/simulador-clases.module').then( m => m.SimuladorClasesPageModule)
   },
   {
