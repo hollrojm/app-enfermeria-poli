@@ -1,13 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar>
+
+  <ion-list id="inbox-list">
+    <div class="menu-header-bg">
+      <div class="fnd"></div>
+    </div>
+
+    <div class="contenido-header">
+      <ion-label>
+        <ion-icon name="person" class="img"></ion-icon>
+      </ion-label>
+    </div>
+
+  </ion-list>
+</ion-toolbar>
 
 <ion-content>
-  
+  <div class="contenido-inicio">
+    <ion-grid class="org">
+      <ion-row>
+        <ion-col class="inputs">
+          <ion-item>
+            <ion-label position="floating">Correo:</ion-label>
+            <ion-input type="email" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
+      <form action="" method="post">
+        <ion-row>
+          <ion-col class="inputs">
+            <ion-item>
+              <ion-label position="floating">Contraseña:</ion-label>
+              <ion-input type="password" name="pass" id="pass" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="inputs">
+            <ion-button expand="block" href="../inicio" required>Inicio</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+      <ion-row>
+        <ion-col class="recordatorio">
+          <a href="../olvido-pass/">¿Olvidaste tu contraseña?</a>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="recordatorio">
+          <a href="../crear-cuenta/">Crear cuenta</a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

@@ -99,8 +99,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder',
-    loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)
+    path: 'olvido-pass',
+    loadChildren: () => import('./olvido-pass/olvido-pass.module').then( m => m.OlvidoPassPageModule)
   },
 
 ];
