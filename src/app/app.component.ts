@@ -9,18 +9,21 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
+
 export class AppComponent implements OnInit {
+    darkMode:boolean = true;
+
   public selectedIndex = 0;
   public appPages = [
+    {
+      title: 'Mi Perfil',
+      url: '/perfil-usuario',
+      icon: 'person'
+    },
     {
       title: 'Inicio',
       url: '/inicio',
       icon: 'home'
-    },
-    {
-      title: 'Ejercicios',
-      url: '/ejercicios',
-      icon: 'folder'
     },
     {
       title: 'Clases',
@@ -42,11 +45,7 @@ export class AppComponent implements OnInit {
       url: '/simulador-clases',
       icon: 'play'
     },
-    {
-      title: 'Perfil',
-      url: '/perfil-usuario',
-      icon: 'person'
-    },
+    
     
     {
       title: 'Institución',
@@ -74,11 +73,23 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.checkDarkTheme();
     });
+  }
+  checkDarkTheme(){
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if(prefersDark.matches){
+      document.body.classList.toggle('dark');
+    }
+  }
+  cambio(){
+    /* const prefersDark = window.matchMedia('(prefers-color-scheme: dark)'); */
+    this.darkMode = !this.darkMode;
+    document.body.classList.toggle('dark');
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('app/')[1];
+    const path = window.location.pathname.split('login/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
