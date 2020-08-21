@@ -54,6 +54,7 @@ ion-content{
 ion-list{
     margin-top: 0px;
     border-radius: 150px 0px 0px 0px;
+    padding-bottom:100%;
     h4{
         margin-left: 35px;
         margin-top: 50px;
@@ -85,7 +86,6 @@ ion-list{
       text-align: center;
       right: 35px;
       margin-top: 6rem;
-      color: #000C3B;
       font-weight: bold;
       
   }
@@ -94,8 +94,9 @@ ion-list{
     text-align: center;
     right: 43px;
     margin-top: 6rem;
-    color: #000C3B;
     font-weight: bold;
   }
+
+
 
 

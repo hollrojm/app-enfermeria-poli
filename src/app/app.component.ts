@@ -13,8 +13,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent implements OnInit {
     darkMode:boolean = true;
 
-  public selectedIndex = 0;
+  public selectedIndex = 1;
   public appPages = [
+    {
+      title: 'Cerrar Sesion',
+      url: '/login',
+      icon: 'exit'
+    },
     {
       title: 'Mi Perfil',
       url: '/perfil-usuario',
@@ -57,6 +62,7 @@ export class AppComponent implements OnInit {
       url: '/contactenos',
       icon: 'send'
     }
+    
   
   ];
   
@@ -67,6 +73,8 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar
   ) {
     this.initializeApp();
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.darkMode = prefersDark.matches;
   }
 
   initializeApp() {
