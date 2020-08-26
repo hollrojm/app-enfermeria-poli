@@ -9,7 +9,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-
   let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
 
   beforeEach(async(() => {
@@ -53,6 +52,7 @@ describe('AppComponent', () => {
     expect(menuItems[0].textContent).toContain('Inbox');
     expect(menuItems[1].textContent).toContain('Outbox');
   });
+
 
   it('should have urls', async () => {
     const fixture = await TestBed.createComponent(AppComponent);
