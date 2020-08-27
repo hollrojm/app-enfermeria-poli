@@ -103,6 +103,24 @@ const routes: Routes = [
     path: 'olvido-pass',
     loadChildren: () => import('./olvido-pass/olvido-pass.module').then( m => m.OlvidoPassPageModule)
   },
+  {
+    path: '',
+    redirectTo: 'Actualizar',
+    pathMatch: 'full'
+  },
+  {
+    path: 'actualizar-usu',
+    loadChildren: () => import('./actualizar-usu/actualizar-usu.module').then( m => m.ActualizarUsuPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'Administrador',
+    pathMatch: 'full'
+  },
+  {
+    path: 'administrador',
+    loadChildren: () => import('./administrador/administrador.module').then( m => m.AdministradorPageModule)
+  },
 
 ];
 
