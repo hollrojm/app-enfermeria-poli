@@ -3,11 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { MsalService, BroadcastService } from '@azure/msal-angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
+
 })
 
 export class AppComponent implements OnInit {
@@ -15,11 +18,7 @@ export class AppComponent implements OnInit {
 
   public selectedIndex = 1;
   public appPages = [
-    {
-      title: 'Cerrar Sesion',
-      url: '/login',
-      icon: 'exit'
-    },
+   
     {
       title: 'Mi Perfil',
       url: '/perfil-usuario',
@@ -70,7 +69,10 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private broadcastService: BroadcastService,
+    private authService: MsalService,
+    public cerrar: Router
   ) {
     this.initializeApp();
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -104,4 +106,12 @@ export class AppComponent implements OnInit {
     }
     
   }
-}
+  logout() {
+    
+    this.authService.logout();
+    
+  } 
+  
+  }
+
+
