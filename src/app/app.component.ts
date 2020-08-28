@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private broadcastService: BroadcastService,
     private authService: MsalService,
-    public cerrar: Router
+    public cerrar: Router,
   ) {
     this.initializeApp();
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
