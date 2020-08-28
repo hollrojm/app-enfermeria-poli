@@ -103,6 +103,40 @@ const routes: Routes = [
     path: 'olvido-pass',
     loadChildren: () => import('./olvido-pass/olvido-pass.module').then( m => m.OlvidoPassPageModule)
   },
+  {
+    path: '',
+    redirectTo: 'Actualizar',
+    pathMatch: 'full'
+  },
+  {
+    path: 'actualizar-usu',
+    loadChildren: () => import('./actualizar-usu/actualizar-usu.module').then( m => m.ActualizarUsuPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'Administrador',
+    pathMatch: 'full'
+  },
+  {
+    path: 'administrador',
+    loadChildren: () => import('./administrador/administrador.module').then( m => m.AdministradorPageModule)
+  },  {
+    path: 'subir-videos',
+    loadChildren: () => import('./subir-videos/subir-videos.module').then( m => m.SubirVideosPageModule)
+  },
+  {
+    path: 'ver-notas',
+    loadChildren: () => import('./ver-notas/ver-notas.module').then( m => m.VerNotasPageModule)
+  },
+  {
+    path: 'subir-notas',
+    loadChildren: () => import('./subir-notas/subir-notas.module').then( m => m.SubirNotasPageModule)
+  },
+  {
+    path: 'mis-videos',
+    loadChildren: () => import('./mis-videos/mis-videos.module').then( m => m.MisVideosPageModule)
+  },
+
 
 ];
 
