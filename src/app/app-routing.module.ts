@@ -136,6 +136,10 @@ const routes: Routes = [
     path: 'mis-videos',
     loadChildren: () => import('./mis-videos/mis-videos.module').then( m => m.MisVideosPageModule)
   },
+  {
+    path: 'progreso-est',
+    loadChildren: () => import('./progreso-est/progreso-est.module').then( m => m.ProgresoEstPageModule)
+  },
 
 
 ];
