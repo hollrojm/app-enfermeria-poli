@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: "app-inicio",
@@ -26,11 +27,16 @@ export class InicioPage implements OnInit {
   ];
 
   darkMode: boolean = true;
-  constructor() {}
+  constructor(
+    public menuCtrl: MenuController,
+  ) {}
 
   ngOnInit() {
     const tag = document.createElement("script");
     tag.src = "https://www.youtube.com/iframe_api";
     document.body.appendChild(tag);
+  }
+  ionViewDidEnter() {
+    this.menuCtrl.enable(true);
   }
 }

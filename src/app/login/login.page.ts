@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MsalService, BroadcastService } from '@azure/msal-angular';
 import {Router} from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,11 @@ export class LoginPage implements OnInit {
 
   constructor(
     private authService: MsalService,
-    public cambio: Router
+    public cambio: Router,
+    public menuCtrl: MenuController
+
   ) { }
+  
 
   ngOnInit() {
   }
@@ -35,6 +39,8 @@ export class LoginPage implements OnInit {
 
     }
   }
-   
+  ionViewDidEnter() {
+    this.menuCtrl.enable(false);
+  }
 }
 

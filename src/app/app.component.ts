@@ -68,6 +68,7 @@ export class AppComponent implements OnInit {
     private broadcastService: BroadcastService,
     private authService: MsalService,
     public cerrar: Router,
+    
   ) {
     this.initializeApp();
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -94,7 +95,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('login/')[1];
+    const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
@@ -102,6 +103,7 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout();
   } 
+  
   }
 
 
