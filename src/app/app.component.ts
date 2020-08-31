@@ -111,7 +111,7 @@ export class AppComponent implements OnInit {
         (page) => page.title.toLowerCase() === path.toLowerCase()
       );
     }
-    this.getProfile();
+    this.getProfile(); 
     this.getProfileImg(); 
   }
   logout() {
