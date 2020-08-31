@@ -1,5 +1,5 @@
 
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -19,6 +19,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -29,7 +30,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
       {
         auth: {
           clientId: "8968f6eb-8ef4-4ab8-8777-8a1645ddc530", // This is your client ID
-          authority: 'https://login.microsoftonline.com/organizations', // This is your tenant ID
+          authority: "https://login.microsoftonline.com/organizations", // This is your tenant ID
           redirectUri: "http://localhost:8100/login", // This is your redirect URI
           postLogoutRedirectUri: "http://localhost:8100/login",
         },
@@ -54,10 +55,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     SplashScreen,
     { provide: HTTP_INTERCEPTORS, useClass: MsalInterceptor, multi: true },
     /* { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, },  */
-    
-        
   ],
   bootstrap: [AppComponent],
-  
 })
 export class AppModule {}

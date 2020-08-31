@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { MsalService, BroadcastService } from '@azure/msal-angular';
-import { HttpClient } from "@angular/common/http";
+import {HttpClient,HttpHeaders,} from "@angular/common/http";
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 import { InteractionRequiredAuthError, AuthError } from 'msal';
-
+import { DomSanitizer } from '@angular/platform-browser';
+import { Providers, MsalProvider } from "@microsoft/mgt";
+import "@microsoft/mgt/dist/es6/components/mgt-person/mgt-person";
 const graphMeEndpoint = "https://graph.microsoft.com/v1.0/me/"; 
+ const graphEndpoint = "https://graph.microsoft.com/v1.0/me/photo/$value"; 
+
+
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
   styleUrls: ["app.component.scss"],
-  
 })
 export class AppComponent implements OnInit {
-   profile; 
+  profile;
+  profileImg;
   darkMode: boolean = true;
 
   public selectedIndex = 1;
@@ -69,11 +74,15 @@ export class AppComponent implements OnInit {
     private broadcastService: BroadcastService,
     private authService: MsalService,
     public cerrar: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private sanitizer: DomSanitizer
   ) {
     this.initializeApp();
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
     this.darkMode = prefersDark.matches;
+  }
+  transform(html) {
+    return this.sanitizer.bypassSecurityTrustUrl(html);
   }
 
   initializeApp() {
@@ -102,35 +111,66 @@ export class AppComponent implements OnInit {
         (page) => page.title.toLowerCase() === path.toLowerCase()
       );
     }
-     this.getProfile(); 
+    this.getProfile();
+    this.getProfileImg(); 
   }
   logout() {
     this.authService.logout();
   }
   getProfile() {
-    this.http.get(graphMeEndpoint)
-      .subscribe({
-        next: (profile) => {
-          this.profile = profile;
-        },
-        error: (err: AuthError) => {
-          // If there is an interaction required error,
-          // call one of the interactive methods and then make the request again.
-          if (InteractionRequiredAuthError.isInteractionRequiredError(err.errorCode)) {
-            this.authService.acquireTokenPopup({
-              scopes: this.authService.getScopesForEndpoint(graphMeEndpoint)
+    this.http.get(graphMeEndpoint).subscribe({
+      next: (profile) => {
+        this.profile = profile;
+      },
+      error: (err: AuthError) => {
+        // Si hay un error de interacción requerida,
+        // llamar a uno de los métodos interactivos y luego realizar la solicitud nuevamente.
+        if (
+          InteractionRequiredAuthError.isInteractionRequiredError(err.errorCode)
+        ) {
+          this.authService
+            .acquireTokenPopup({
+              scopes: this.authService.getScopesForEndpoint(graphMeEndpoint),
             })
-              .then(() => {
-                this.http.get(graphMeEndpoint)
-                  .toPromise()
-                  .then(profile => {
-                    this.profile = profile;
-                  });
-              });
-          }
+            .then(() => {
+              this.http
+                .get(graphMeEndpoint)
+                .toPromise()
+                .then((profile) => {
+                  this.profile = profile;
+                });
+            });
         }
-      });
-  } 
+      },
+    });
+  }
+  getProfileImg() {
+    this.http
+      .get(graphEndpoint, {
+        headers: { "Content-Type": "image/*" },
+        responseType: "arraybuffer",
+      })
+      .toPromise()
+      .then(
+        (data) => {
+          const TYPED_ARRAY = new Uint8Array(data);
+          // convierte la matriz escrita en una cadena de caracteres
+          const STRING_CHAR = String.fromCharCode.apply(null, TYPED_ARRAY);
+
+          //convierte una cadena de caracteres a base64 String
+          let base64String = btoa(STRING_CHAR);
+
+          //desinfectar la URL que se pasa como un valor a la imagen src atributo
+
+          this.profileImg = this.sanitizer.bypassSecurityTrustUrl(
+            "data:image/*;base64, " + base64String
+          );
+
+          console.log(this.profileImg);
+        },
+        (err) => {
+          this.profileImg = "../assets/images/avatar-enfermeria.JPG";
+        }
+      );
+  }
 }
-
-
