@@ -19,7 +19,7 @@
         <ion-col class="inputs">
           <ion-item lines="none">
             <ion-label position="floating">Correo:</ion-label>
-            <ion-input type="email" required></ion-input>
+            <ion-input type="email" #email required></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -29,14 +29,14 @@
           <ion-col class="inputs">
             <ion-item lines="none">
               <ion-label position="floating">Contraseña:</ion-label>
-              <ion-input color="dark" type="password" name="pass" id="pass" required></ion-input>
+              <ion-input color="dark" type="password" name="pass" id="pass" #password required></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col class="inputs">
-            <ion-button class="boton-inicio" expand="block" >Inicio</ion-button>
-            <ion-button fill="clear" expand="block" (click)="login()">
+            <ion-button class="boton-inicio" expand="block"  (click)="onLogin(email, password)" >Inicio</ion-button>
+            <ion-button type="submit" fill="clear" expand="block" (click)="login()" >
               <ion-icon  style="zoom:2.5;" class="icon" src="assets/icon/Outlook_icon2.svg">
               </ion-icon >Ingresa con tu cuenta @PI </ion-button>
           </ion-col>
@@ -44,12 +44,12 @@
       </form>
       <ion-row>
         <ion-col class="recordatorio">
-          <a href="../olvido-pass/">¿Olvidaste tu contraseña?</a>
+          <a href="../forgot-password/">¿Olvidaste tu contraseña?</a>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col class="recordatorio">
-          <a href="../crear-cuenta/">Crear cuenta</a>
+          <a href="../register/">Crear cuenta</a>
         </ion-col>
       </ion-row>
       <div class="social">

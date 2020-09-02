@@ -120,7 +120,8 @@ const routes: Routes = [
   {
     path: 'administrador',
     loadChildren: () => import('./administrador/administrador.module').then( m => m.AdministradorPageModule)
-  },  {
+  },
+  {
     path: 'subir-videos',
     loadChildren: () => import('./subir-videos/subir-videos.module').then( m => m.SubirVideosPageModule)
   },
@@ -140,7 +141,23 @@ const routes: Routes = [
     path: 'progreso-est',
     loadChildren: () => import('./progreso-est/progreso-est.module').then( m => m.ProgresoEstPageModule)
   },
-
+  {
+    path: '',
+    redirectTo: 'Registro',
+    pathMatch: 'full'
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'verify-email',
+    loadChildren: () => import('./verify-email/verify-email.module').then( m => m.VerifyEmailPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  }
 
 ];
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MsalService, BroadcastService } from '@azure/msal-angular';
-import {HttpClient,HttpHeaders,} from "@angular/common/http";
+import {HttpClient,HttpHeaders} from "@angular/common/http";
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';

@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { HttpClient } from "@angular/common/http";
 import { InteractionRequiredAuthError, AuthError } from 'msal';
+import { AuthService } from '../service/auth.service';
 const graphMeEndpoint = "https://graph.microsoft.com/v1.0/me/"; 
 @Component({
   selector: 'app-login',
@@ -13,16 +14,36 @@ const graphMeEndpoint = "https://graph.microsoft.com/v1.0/me/";
 export class LoginPage implements OnInit {
   profile;
   constructor(
+    private authSvc: AuthService,
+    private router: Router,
     private authService: MsalService,
     public cambio: Router,
     public http: HttpClient,
     public menuCtrl: MenuController
-
-
   ) { }
 
   ngOnInit() {
     this.getProfile();
+  }
+  async onLogin(email, password) {
+    try {
+      const user = await this.authSvc.login(email.value, password.value);
+      if (user) {
+        const isVerified = this.authSvc.isEmailVerified(user);
+        this.redirectUser(isVerified);
+        console.log('User->', user);
+      }
+    } catch (error) {
+      console.log('Error->', error);
+    }
+  }
+
+  private redirectUser(isVerified: boolean): void {
+    if (isVerified) {
+      this.router.navigate(['administrador']);
+    } else {
+      this.router.navigate(['verify-email']);
+    }
   }
   login() {
     const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;

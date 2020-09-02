@@ -12,7 +12,9 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 import { MsalModule, MsalInterceptor } from '@azure/msal-angular';
 import { Component, OnInit } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
@@ -26,6 +28,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     YouTubePlayerModule,
     HttpClientModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     MsalModule.forRoot(
       {
         auth: {
