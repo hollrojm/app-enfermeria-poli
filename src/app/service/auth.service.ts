@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { User } from '../shared/user.interface';
 import { AngularFireAuth } from '@angular/fire/auth';
+/* instalar en orden
+instalar ** npm i firebase **
+tambien istalar  ** ng add @angular/fire **  */
 import * as firebase from 'firebase';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
