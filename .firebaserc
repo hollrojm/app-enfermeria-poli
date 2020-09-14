@@ -6,13 +6,6 @@
           "simulador-enfermeria-poli"
         ]
       }
-    },
-    "simuladorenfermeria": {
-      "hosting": {
-        "app": [
-          "simuladorenfermeria"
-        ]
-      }
     }
   }
 }
