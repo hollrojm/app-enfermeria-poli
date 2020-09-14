@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "simulador-enfermeria-poli": {
+      "hosting": {
+        "app": [
+          "simulador-enfermeria-poli"
+        ]
+      }
+    },
+    "simuladorenfermeria": {
+      "hosting": {
+        "app": [
+          "simuladorenfermeria"
+        ]
+      }
+    }
+  }
+}
