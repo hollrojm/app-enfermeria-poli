@@ -15,6 +15,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import * as firebase from 'firebase';
 
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
@@ -35,7 +36,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         auth: {
           clientId: "8968f6eb-8ef4-4ab8-8777-8a1645ddc530", // This is your client ID
           authority: "https://login.microsoftonline.com/organizations", // This is your tenant ID
-          redirectUri: "http://localhost:8100/login", // This is your redirect URI
+          redirectUri: "https://login.microsoftonline.com/common/oauth2/nativeclient", // This is your redirect URI
           postLogoutRedirectUri: "http://localhost:8100/login",
         },
         cache: {
@@ -53,6 +54,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         extraQueryParameters: {},
       }
     ),
+    
   ],
   providers: [
     StatusBar,

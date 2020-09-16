@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
 
   private redirectUser(isVerified: boolean): void {
     if (isVerified) {
-      this.router.navigate(['administrador']);
+      this.router.navigate(['inicio']);
     } else {
       this.router.navigate(['verify-email']);
     }

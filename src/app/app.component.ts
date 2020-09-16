@@ -61,11 +61,17 @@ export class AppComponent implements OnInit {
       icon: "business",
     },
     {
+      title: "Administrador",
+      url: "/administrador",
+      icon: "person",
+    },
+    {
       title: "Contactenos",
       url: "/contactenos",
       icon: "send",
     },
   ];
+  
 
   constructor(
     private platform: Platform,
@@ -117,6 +123,7 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
+  
   getProfile() {
     this.http.get(graphMeEndpoint).subscribe({
       next: (profile) => {

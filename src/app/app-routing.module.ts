@@ -125,6 +125,8 @@ const routes: Routes = [
     loadChildren: () => import('./actualizar-usu/actualizar-usu.module').then( m => m.ActualizarUsuPageModule),
     canActivate:[AuthGuard]
   },
+
+  
   {
     path: 'administrador',
     loadChildren: () => import('./administrador/administrador.module').then( m => m.AdministradorPageModule),
