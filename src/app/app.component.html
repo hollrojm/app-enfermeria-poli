@@ -5,11 +5,12 @@
         <ion-list id="inbox-list" >
           <div class="menu-header-bg"></div>
             <div class="contenido-header">
-              <img src="../assets/images/avatar-enfermeria.JPG" alt="Avatar Enfermeria">
+              <img [src]="profileImg">
               <ion-label>
-                <h2>Florence Nightingale</h2>
-                <p>Enfermería</p>
+                <h2>{{profile?.displayName}}</h2>
+                <p>{{profile?.jobTitle}}</p>
               </ion-label>
+              
             </div>
             <div class="action-button">
               
@@ -29,12 +30,19 @@
           
           <ion-note></ion-note>
             <div class="menu-toggle">
+              <ion-item lines="none">
+              <ion-button size="l" fill="clear" (click)='logout()'>
+                <ion-icon style="zoom:1.5;" slot="start" name="exit"></ion-icon>Cerrar Sesión
+              </ion-button>
+              </ion-item>
           <ion-menu-toggle    auto-hide="false" *ngFor="let p of appPages; let i = index" width="100%">
-            <ion-item  (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"
+            <ion-item (click)="selectedIndex = i"  routerDirection="root"
+              [routerLink]="[p.url]"
               lines="none" detail="false" [class.selected]="selectedIndex == i">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
+            
           </ion-menu-toggle>
           </div>
         </ion-list>
@@ -46,7 +54,6 @@
           </div>
         </ion-footer> -->
         
-       
       </ion-content>
 
     </ion-menu>
