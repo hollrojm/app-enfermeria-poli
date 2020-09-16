@@ -36,7 +36,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         auth: {
           clientId: "8968f6eb-8ef4-4ab8-8777-8a1645ddc530", // This is your client ID
           authority: "https://login.microsoftonline.com/organizations", // This is your tenant ID
-          redirectUri: "https://login.microsoftonline.com/common/oauth2/nativeclient", // This is your redirect URI
+          redirectUri: "msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D", // This is your redirect URI
           postLogoutRedirectUri: "http://localhost:8100/login",
         },
         cache: {
