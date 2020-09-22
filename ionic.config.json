@@ -1,7 +1,8 @@
 {
   "name": "Simulador_Enfermeria",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

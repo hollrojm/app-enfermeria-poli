@@ -1,5 +1,7 @@
+import { AuthGuard } from './shared/auth.guard';
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes, CanActivate } from '@angular/router';
+
 /* import { google();}  // Google's Maven repository */
 const routes: Routes = [
   {
@@ -18,7 +20,8 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule)
+    loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule),
+   // canActivate:[AuthGuard]
   },
   
   {
@@ -28,7 +31,8 @@ const routes: Routes = [
   },
   {
     path: 'clases',
-    loadChildren: () => import('./clases/clases.module').then( m => m.ClasesPageModule)
+    loadChildren: () => import('./clases/clases.module').then( m => m.ClasesPageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: '',
@@ -37,7 +41,8 @@ const routes: Routes = [
   },
   {
     path: 'contactenos',
-    loadChildren: () => import('./contactenos/contactenos.module').then( m => m.ContactenosPageModule)
+    loadChildren: () => import('./contactenos/contactenos.module').then( m => m.ContactenosPageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: '',
@@ -46,7 +51,8 @@ const routes: Routes = [
   },
   {
     path: 'crear-cuenta',
-    loadChildren: () => import('./crear-cuenta/crear-cuenta.module').then( m => m.CrearCuentaPageModule)
+    loadChildren: () => import('./crear-cuenta/crear-cuenta.module').then( m => m.CrearCuentaPageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: '',
@@ -55,7 +61,8 @@ const routes: Routes = [
   },
   {
     path: 'perfil-usuario',
-    loadChildren: () => import('./perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule)
+    loadChildren: () => import('./perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: '',
@@ -64,7 +71,8 @@ const routes: Routes = [
   },
   {
     path: 'quienes-somos',
-    loadChildren: () => import('./quienes-somos/quienes-somos.module').then( m => m.QuienesSomosPageModule)
+    loadChildren: () => import('./quienes-somos/quienes-somos.module').then( m => m.QuienesSomosPageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: '',
@@ -73,7 +81,8 @@ const routes: Routes = [
   },
   {
     path: 'simulador-clases',
-    loadChildren: () => import('./simulador-clases/simulador-clases.module').then( m => m.SimuladorClasesPageModule)
+    loadChildren: () => import('./simulador-clases/simulador-clases.module').then( m => m.SimuladorClasesPageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: '',
@@ -82,7 +91,8 @@ const routes: Routes = [
   },
   {
     path: 'videos',
-    loadChildren: () => import('./videos/videos.module').then( m => m.VideosPageModule)
+    loadChildren: () => import('./videos/videos.module').then( m => m.VideosPageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: '',
@@ -91,7 +101,8 @@ const routes: Routes = [
   },
   {
     path: 'ejercicios',
-    loadChildren: () => import('./ejercicios/ejercicios.module').then( m => m.EjerciciosPageModule)
+    loadChildren: () => import('./ejercicios/ejercicios.module').then( m => m.EjerciciosPageModule),
+    canActivate:[AuthGuard]
   },
   
 {
@@ -101,9 +112,83 @@ const routes: Routes = [
   },
   {
     path: 'olvido-pass',
-    loadChildren: () => import('./olvido-pass/olvido-pass.module').then( m => m.OlvidoPassPageModule)
+    loadChildren: () => import('./olvido-pass/olvido-pass.module').then( m => m.OlvidoPassPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: '',
+    redirectTo: 'Actualizar',
+    pathMatch: 'full'
+  },
+  {
+    path: 'actualizar-usu',
+    loadChildren: () => import('./actualizar-usu/actualizar-usu.module').then( m => m.ActualizarUsuPageModule),
+    canActivate:[AuthGuard]
   },
 
+  
+  {
+    path: 'administrador',
+    loadChildren: () => import('./administrador/administrador.module').then( m => m.AdministradorPageModule),
+   canActivate:[AuthGuard]
+  },
+  {
+    path: 'subir-videos',
+    loadChildren: () => import('./subir-videos/subir-videos.module').then( m => m.SubirVideosPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'ver-notas',
+    loadChildren: () => import('./ver-notas/ver-notas.module').then( m => m.VerNotasPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'subir-notas',
+    loadChildren: () => import('./subir-notas/subir-notas.module').then( m => m.SubirNotasPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'mis-videos',
+    loadChildren: () => import('./mis-videos/mis-videos.module').then( m => m.MisVideosPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'progreso-est',
+    loadChildren: () => import('./progreso-est/progreso-est.module').then( m => m.ProgresoEstPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: '',
+    redirectTo: 'Registro',
+    pathMatch: 'full'
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'verify-email',
+    loadChildren: () => import('./verify-email/verify-email.module').then( m => m.VerifyEmailPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'sistema-circulatorio',
+    // tslint:disable-next-line: max-line-length
+    loadChildren: () => import('./Systems-human/sistema-circulatorio/sistema-circulatorio.module').then( m => m.SistemaCirculatorioPageModule),
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'sistema-respiratorio',
+    // tslint:disable-next-line: max-line-length
+    loadChildren: () => import('./Systems-human/sistema-respiratorio/sistema-respiratorio.module').then( m => m.SistemaRespiratorioPageModule),
+    canActivate:[AuthGuard]
+  },
 ];
 
 @NgModule({
