@@ -15,7 +15,7 @@
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
       <ion-label>Portal de Servicios </ion-label>
-      <ion-button fill="outline" slot="end" href="http://oasprod.politecnicointernacional.edu.co:7778/portal/page/portal/uxxiportal/inicio">Subir..</ion-button>
+      <ion-button fill="outline" slot="end" routerLink="['http://oasprod.politecnicointernacional.edu.co:7778/portal/page/portal/uxxiportal/inicio']">Subir..</ion-button>
     </ion-item>
     <ion-card-content>
       Por favor inicie sesión autenticándose con su usuario y contraseña para poder acceder a los sistemas automatizados de procesamiento de información.
@@ -30,7 +30,7 @@
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
       <ion-label>Subir Notas App</ion-label>
-      <ion-button fill="outline" slot="end" href="../subir-notas">Subir..</ion-button>
+      <ion-button fill="outline" slot="end" routerLink="['../subir-notas']">Subir..</ion-button>
     </ion-item>
     <ion-card-content>
     Si desea subir notas sobre el Proceso de sus Estudiantes, ingrese a este modulo.       
@@ -45,7 +45,7 @@
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
       <ion-label> Campus Virtual</ion-label>
-      <ion-button fill="outline" slot="end" href="https://campusvirtual.politecnicointernacional.edu.co/login/index.php">Subir..</ion-button>
+      <ion-button fill="outline" slot="end" routerLink="['https://campusvirtual.politecnicointernacional.edu.co/login/index.php']">Subir..</ion-button>
     </ion-item>
     <ion-card-content>
       Si desea subir notas sobre el Proceso de sus Estudiantes, ingrese a este modulo  </ion-card-content>
@@ -76,7 +76,7 @@
       <ion-icon name="logo-codepen" slot="start"></ion-icon>
       <ion-label>Mas Informacion... </ion-label>
     </ion-item>
-    <p>Politecnico internacional® By Oscar Rodriguez Lopez</p>
+    <p>Politecnico internacional®</p>
   </ion-card>
   <ion-fab horizontal="left" vertical="top" slot="fixed">
       
@@ -84,20 +84,20 @@
       <ion-icon md="ellipsis-horizontal-circle" ios="chevron-up-circle-outline"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="button">
-      <ion-fab-button color="light" href="../subir-videos">
+      <ion-fab-button color="light" routerLink="['../subir-videos']">
         <ion-icon name="videocam"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button color="light" href="../ver-notas">
+      <ion-fab-button color="light" routerLink="['../ver-notas']">
         <ion-icon name="library"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button color="light" href="../progreso-est">
+      <ion-fab-button color="light" routerLink="['../progreso-est']">
         <ion-icon name="git-compare"></ion-icon>
       </ion-fab-button>
 
-      <ion-fab-button color="light" href="../mis-videos">
+      <ion-fab-button color="light" routerLink="['../mis-videos']">
         <ion-icon name="images"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button color="light" href="../administrador">
+      <ion-fab-button color="light" routerLink="['../administrador']">
         <ion-icon name="person"></ion-icon>
       </ion-fab-button>
       <ion-fab-button color="light" >

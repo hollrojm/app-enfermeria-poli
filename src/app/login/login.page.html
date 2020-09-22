@@ -36,7 +36,7 @@
         <ion-row>
           <ion-col class="inputs">
             <ion-button class="boton-inicio" expand="block"  (click)="onLogin(email, password)" >Inicio</ion-button>
-            <ion-button type="submit" fill="clear" expand="block" (click)="login()" >
+            <ion-button type="submit" fill="clear" expand="block" (click)="loginMs()" >
               <ion-icon  style="zoom:2.5;" class="icon" src="assets/icon/Outlook_icon2.svg">
               </ion-icon >Ingresa con tu cuenta @PI </ion-button>
           </ion-col>
@@ -44,12 +44,12 @@
       </form>
       <ion-row>
         <ion-col class="recordatorio">
-          <a href="../forgot-password/">¿Olvidaste tu contraseña?</a>
+          <a routerLink="['../forgot-password/']">¿Olvidaste tu contraseña?</a>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col class="recordatorio">
-          <a href="../register/">Crear cuenta</a>
+          <a routerLink="['../register/']">Crear cuenta</a>
         </ion-col>
       </ion-row>
       <div class="social">

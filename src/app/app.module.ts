@@ -16,8 +16,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import * as firebase from 'firebase';
+import {auth}from 'firebase';
 
-
+firebase.initializeApp (environment.firebaseConfig);
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 @NgModule({
   declarations: [AppComponent],
@@ -36,8 +37,8 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         auth: {
           clientId: "8968f6eb-8ef4-4ab8-8777-8a1645ddc530", // This is your client ID
           authority: "https://login.microsoftonline.com/organizations", // This is your tenant ID
-          redirectUri: "msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D", // This is your redirect URI
-          postLogoutRedirectUri: "http://localhost:8100/login",
+          redirectUri: "msauth://io.ionic.starter/fdvh5AOHK1EKm1NdxoI8SawEEC0%3D", // This is your redirect URI
+          postLogoutRedirectUri: "http://www.google.com",
         },
         cache: {
           cacheLocation: "localStorage",

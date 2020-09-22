@@ -41,7 +41,7 @@
             <ion-label>
               <h3>Subir Videos:</h3>
               
-              <ion-button href="../subir-videos">Abrir</ion-button>  
+              <ion-button [routerLink]="['../subir-videos']">Abrir</ion-button>  
             </ion-label>
             
           </ion-item>
@@ -52,7 +52,7 @@
             <ion-label>
               <h3>Subir Notas:</h3>
               
-              <ion-button href="../ver-notas">Abrir</ion-button>
+              <ion-button [routerLink]="['../ver-notas']">Abrir</ion-button>
             </ion-label>
           </ion-item>
           <ion-item>
@@ -62,7 +62,7 @@
             <ion-label>
               <h3>Progreso Estudiantes:</h3>
               
-              <ion-button href="../progreso-est" >Abrir</ion-button>
+              <ion-button [routerLink]="['../progreso-est']" >Abrir</ion-button>
             </ion-label>
           </ion-item>
     
@@ -73,7 +73,7 @@
             <ion-label>
               <h3>Campus Virtual:</h3>
               
-              <ion-button href="https://campusvirtual.politecnicointernacional.edu.co/login/index.php" >Abrir</ion-button>
+              <ion-button [routerLink]="['https://campusvirtual.politecnicointernacional.edu.co/login/index.php']">Abrir</ion-button>
             </ion-label>
           </ion-item>
     
@@ -84,13 +84,13 @@
             <ion-label>
               <h3>Mis Videos</h3>
               
-              <ion-button href="../mis-videos" >Abrir</ion-button>
+              <ion-button [routerLink]="['../mis-videos']" >Abrir</ion-button>
             </ion-label>
           </ion-item>
     
         </ion-list>
     </ion-card-content>
-    <p>Politecnico internacional® By Oscar Rodriguez Lopez</p>
+    <p>Politecnico internacional®</p>
     </ion-card>
 
  
