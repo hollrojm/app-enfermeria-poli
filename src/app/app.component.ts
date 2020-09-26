@@ -7,11 +7,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 import { InteractionRequiredAuthError, AuthError } from 'msal';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Providers, MsalProvider } from "@microsoft/mgt";
 import "@microsoft/mgt/dist/es6/components/mgt-person/mgt-person";
+import * as firebase from 'firebase';
+import { LoginPage } from './login/login.page';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 const graphMeEndpoint = "https://graph.microsoft.com/v1.0/me/"; 
  const graphEndpoint = "https://graph.microsoft.com/v1.0/me/photo/$value"; 
-
 
 @Component({
   selector: "app-root",
@@ -71,6 +73,7 @@ export class AppComponent implements OnInit {
       icon: "send",
     },
   ];
+  props: any;
   
 
   constructor(
@@ -81,7 +84,10 @@ export class AppComponent implements OnInit {
     private authService: MsalService,
     public cerrar: Router,
     private http: HttpClient,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    public router: Router,
+    private afAuth: AngularFireAuth
+    
   ) {
     this.initializeApp();
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
@@ -117,14 +123,20 @@ export class AppComponent implements OnInit {
         (page) => page.title.toLowerCase() === path.toLowerCase()
       );
     }
-    this.getProfile(); 
-    this.getProfileImg(); 
+  /*   this.getProfile(); 
+    this.getProfileImg();  */
   }
+
   logout() {
-    this.authService.logout();
+    console.log('salir');
+    this.afAuth.signOut();
+    this.router.navigateByUrl('/login');
+      
+    }
+
   }
   
-  getProfile() {
+ /*  getProfile() {
     this.http.get(graphMeEndpoint).subscribe({
       next: (profile) => {
         this.profile = profile;
@@ -180,4 +192,35 @@ export class AppComponent implements OnInit {
         }
       );
   }
-}
+  loginMs = () =>{
+    var provider = new firebase.auth.OAuthProvider('microsoft.com');
+    console.log(provider)
+    provider.addScope('User.mail');
+    firebase.auth().signInWithRedirect(provider).then(
+      function(result) {
+        console.log('result', result)
+        var token = result.credential.accessToken;
+        var user = result.user;
+        var isNewUser = result.additionalUserInfo.isNewUser;
+         
+      }.bind(this) 
+    )
+  
+ 
+ .catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+}); 
+
+  } */
+
+  
+  
+    
+

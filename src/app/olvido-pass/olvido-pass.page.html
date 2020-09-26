@@ -26,12 +26,12 @@
 
         <ion-row>
           <ion-col class="inputs">
-            <ion-button expand="block" routerLink="../login/" required>Recuperar contraseña</ion-button>
+            <ion-button expand="block" routerLink="['forgot-password']" required>Recuperar contraseña</ion-button>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col class="inputs">
-            <ion-button expand="block" routerLink="../login/" required>Volver</ion-button>
+            <ion-button expand="block" [routerLink]="['login']" required>Volver</ion-button>
           </ion-col>
         </ion-row>
       </form>

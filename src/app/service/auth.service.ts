@@ -9,6 +9,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+const provider = new firebase.auth.OAuthProvider('microsoft.com');
 @Injectable({
   providedIn: 'root'
 })
@@ -95,4 +96,5 @@ export class AuthService {
 
     return userRef.set(data, { merge: true });
   }
+  
 }

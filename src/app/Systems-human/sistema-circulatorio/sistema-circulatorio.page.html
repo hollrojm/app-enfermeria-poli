@@ -19,7 +19,7 @@
   
   <div class="sketchfab-embed-wrapper">
     <ion-fab horizontal="left" vertical="top" slot="fixed">
-      <ion-fab-button color="dark">
+      <ion-fab-button color="dark" >
         <ion-icon md="ellipsis-horizontal-circle" ios="chevron-up-circle-outline"></ion-icon>
       </ion-fab-button>
       <ion-fab-list side="button">
@@ -32,7 +32,7 @@
         <ion-fab-button color="light" href="">
           <ion-icon name="skull-outline"></ion-icon>
         </ion-fab-button>
-        <ion-fab-button color="light" href="../simulador-clases">
+        <ion-fab-button color="light" [routerLink]="['/simulador-clases']">
           <ion-icon name="chevron-back-circle-outline"></ion-icon>
         </ion-fab-button>
       </ion-fab-list>

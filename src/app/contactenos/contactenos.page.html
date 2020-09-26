@@ -63,7 +63,7 @@
                       </div>
                     </div><br>
                     <div class="link">
-                      <input type="checkbox"> Acepto <a href="https://politecnicointernacional.edu.co/sw/sites/default/files/2019-11/PI%20HABEAS%20DATA-Pol%C3%ADtica%20de%20tratamiento%20datos_0.pdf" target="_blank">las politicas de privacidad y tratamiento de datos personales</a>
+                      <input type="checkbox"> Acepto <a [routerLink]="['mentoria.virtual@pi.edu.co']" target="_blank">las politicas de privacidad y tratamiento de datos personales</a>
                     </div>
                     <div class="rows">
                       <input type="submit" value="Enviar">
@@ -81,16 +81,19 @@
                   </ion-fab-button>
                   <ion-fab-list>
                     <ion-fab-button color="light">
-                      <a href="https://www.facebook.com/PolitecnicoIN" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+                      <a href="https://es-la.facebook.com/politecnicointernacionalcolombia/"target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
                     </ion-fab-button>
                     <ion-fab-button color="light">
-                      <a href="https://twitter.com/PolitecnicoIn?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+                      <a href="https://twitter.com/politecnicoin?lang=es" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
                     </ion-fab-button>
                     <ion-fab-button color="light">
-                      <a href="https://www.instagram.com/politecnicoin/"><ion-icon name="logo-instagram" target="_blank"></ion-icon></a> 
+                      <a href="https://www.instagram.com/politecnicoin/" ><ion-icon name="logo-instagram" target="_blank"></ion-icon></a> 
                     </ion-fab-button>
                     <ion-fab-button color="light">
                       <a href="mailto:servicioalcliente@pi.edu.co?Subject=Contactar" target="_blank"><ion-icon name="at-sharp"></ion-icon></a>
+                    </ion-fab-button>
+                    <ion-fab-button color="light">
+                      <a href="https://wa.me/573204816169?text=Buen%20Día" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
                     </ion-fab-button>
                   </ion-fab-list>
                   
@@ -125,7 +128,7 @@
            
                                <div class="row2">
                                     <ion-icon name="location-outline"></ion-icon>
-                                    <label><a href="https://www.google.com/maps/place/Polit%C3%A9cnico+Internacional+Sede+Av.+Chile/@4.6577156,-74.0574031,15z/data=!4m5!3m4!1s0x0:0xd50e13bd54a7b7b6!8m2!3d4.6577156!4d-74.0574031" target="_blank" >Sede norte calle 72</a></label>
+                                    <label><a href="https://www.google.com/maps/place/Polit%C3%A9cnico+Internacional+Sede+Av.+Chile/@4.6577156,-74.0574031,15z/data=!4m5!3m4!1s0x0:0xd50e13bd54a7b7b6!8m2!3d4.6577156!4d-74.0574031"  target="_blank" >Sede norte calle 72</a></label>
                                 </div>
 
                                 <div class="row2">
@@ -153,7 +156,7 @@
 
                                <div class="row2">
                                 <ion-icon name="mail-outline"></ion-icon>
-                                    <label><a href="mailto:servicioalcliente@pi.edu.co?Subject=Contactar%por%correo"> servicioalcliente@pi.edu.co</a></label>
+                                    <label><a [routerLink]="['mailto:servicioalcliente@pi.edu.co?Subject=Contactar%por%correo']"> servicioalcliente@pi.edu.co</a></label>
                                </div>
            
                            </div>
@@ -165,11 +168,11 @@
                    <div class="container-footer">
                           <div class="footer">
                                <div class="copyright">
-                                   © 2020 Todos los Derechos Reservados | <a href="">Politecnico internacional</a>
+                                   © 2020 Todos los Derechos Reservados | <a [routerLink]="['']">Politecnico internacional</a>
                                </div>
            
                                <div class="information">
-                                   <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> | <a href="https://politecnicointernacional.edu.co/sw/sites/default/files/2019-12/Incremento-Derechos-pecuniarios-2020.pdf" target="_blank">Terminos y Condiciones</a>
+                                   <a href="">Informacion Compañia</a> | <a [routerLink]="['']">Privacion y Politica</a> | <a [routerLink]="['https://politecnicointernacional.edu.co/sw/sites/default/files/2019-12/Incremento-Derechos-pecuniarios-2020.pdf']" target="_blank">Terminos y Condiciones</a>
                                </div>
                            </div>
            

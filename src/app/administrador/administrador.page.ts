@@ -1,10 +1,7 @@
-import { AuthService } from './../service/auth.service';
+
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { User } from './../shared/user.interface';
 import { Component, OnInit } from '@angular/core';
-import * as firebase from 'firebase';
-import { threadId } from 'worker_threads';
 
 
 @Component({
@@ -15,9 +12,10 @@ import { threadId } from 'worker_threads';
 export class AdministradorPage implements OnInit {
 
   constructor(
-    private authSvs: AuthService,
+    /* private authSvs: AuthService, */
      private router: Router, 
-     private afAuth: AngularFireAuth) { }
+     private afAuth: AngularFireAuth
+     ) { }
 
   ngOnInit() {
   }
