@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import "@microsoft/mgt/dist/es6/components/mgt-person/mgt-person";
 import * as firebase from 'firebase';
 import { LoginPage } from './login/login.page';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 const graphMeEndpoint = "https://graph.microsoft.com/v1.0/me/"; 
  const graphEndpoint = "https://graph.microsoft.com/v1.0/me/photo/$value"; 
@@ -84,7 +85,8 @@ export class AppComponent implements OnInit {
     public cerrar: Router,
     private http: HttpClient,
     private sanitizer: DomSanitizer,
-    private router: Router,
+    public router: Router,
+    private afAuth: AngularFireAuth
     
   ) {
     this.initializeApp();
@@ -121,23 +123,20 @@ export class AppComponent implements OnInit {
         (page) => page.title.toLowerCase() === path.toLowerCase()
       );
     }
-    this.getProfile(); 
-    this.getProfileImg(); 
+  /*   this.getProfile(); 
+    this.getProfileImg();  */
   }
+
   logout() {
-
-    firebase.auth().signOut().then(function() {
-      console.log('se deslogueo')
-      this.cambio.navigate(['/login']);
-
-    }).catch(function(error) {
-      console.log(error)  
+    console.log('salir');
+    this.afAuth.signOut();
+    this.router.navigateByUrl('/login');
       
-    });
+    }
 
   }
   
-  getProfile() {
+ /*  getProfile() {
     this.http.get(graphMeEndpoint).subscribe({
       next: (profile) => {
         this.profile = profile;
@@ -219,9 +218,9 @@ export class AppComponent implements OnInit {
   // ...
 }); 
 
-  }
+  } */
+
   
-  }
   
     
 

@@ -81,23 +81,22 @@ export class LoginPage implements OnInit {
   loginMs = () =>{
     console.log(provider)
       var provider = new firebase.auth.OAuthProvider('microsoft.com');
-      this.cambio.navigate(['/inicio']);
+      /* this.cambio.navigate(['/inicio']); */
       provider.addScope('mail.read');
-      console.log(provider)
-      firebase.auth().signInWithPopup(provider);
+      
+      firebase.auth().signInWithRedirect(provider)
       firebase.auth().getRedirectResult()
-      /* .then( 
+      .then( 
         function(result) {
           
-           console.log('acceso ok')
-          var token = result.credential.accessToken;
-          var user = result.user;
-          var isNewUser = result.additionalUserInfo.isNewUser; 
+           console.log(result)
+             
           
           
-        } 
+        } ,error=>{console.log(error);
+        }
         
-      ) */
+      )
     
    
    .catch(function(error) {

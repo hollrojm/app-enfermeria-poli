@@ -19,20 +19,20 @@
   
   <div class="sketchfab-embed-wrapper">
     <ion-fab horizontal="left" vertical="top" slot="fixed">
-      <ion-fab-button color="dark">
+      <ion-fab-button color="dark" >
         <ion-icon md="ellipsis-horizontal-circle" ios="chevron-up-circle-outline"></ion-icon>
       </ion-fab-button>
       <ion-fab-list side="button">
-        <ion-fab-button color="light" routerLink="['../sistema-circulatorio']">
+        <ion-fab-button color="light" href="../sistema-circulatorio">
           <ion-icon name="pulse-outline"></ion-icon>
         </ion-fab-button>
-        <ion-fab-button color="light" routerLink="['../sistema-respiratorio']">
+        <ion-fab-button color="light" href="../sistema-respiratorio">
           <ion-icon name="fitness-outline"></ion-icon>
         </ion-fab-button>
         <ion-fab-button color="light" href="">
           <ion-icon name="skull-outline"></ion-icon>
         </ion-fab-button>
-        <ion-fab-button color="light" >
+        <ion-fab-button color="light" [routerLink]="['/simulador-clases']">
           <ion-icon name="chevron-back-circle-outline"></ion-icon>
         </ion-fab-button>
       </ion-fab-list>
