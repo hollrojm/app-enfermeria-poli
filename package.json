@@ -33,7 +33,7 @@
     "cordova": "^10.0.0",
     "cordova-android": "9.0.0",
     "cordova-plugin-inappbrowser": "^4.0.0",
-    "firebase": "^7.19.1",
+    "firebase": "^7.21.0",
     "msal": "^1.4.0",
     "native-run": "^1.1.0",
     "rxjs": "~6.5.1",
